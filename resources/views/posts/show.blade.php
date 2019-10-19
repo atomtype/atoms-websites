@@ -5,7 +5,7 @@
     <h1>{{$post->title}}</h1>
     <div class="row">
         <div class="col-sm-6">
-            <img src="/storage/cover_images/{{$post->cover_image}}" class="img-responsive">
+            <img src="/storage/coverimages/{{$post->cover_image}}" class="img-responsive">
         </div>    
     </div>
     <br><br>

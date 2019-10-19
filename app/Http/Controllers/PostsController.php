@@ -73,7 +73,7 @@ class PostsController extends Controller
             $fileNameToStore = $filename . "_" . time() . "." . $extension;
 
             // Upload the image
-            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+            $path = $request->file('cover_image')->storeAs('public/coverimages', $fileNameToStore);
             
         } else {
             $fileNameToStore = 'noimage.jpg';
@@ -146,7 +146,7 @@ class PostsController extends Controller
             // Filename to Store
             $fileNameToStore = $filename . "_" . time() . "." . $extension;
             // Upload Image
-            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+            $path = $request->file('cover_image')->storeAs('public/coverimages', $fileNameToStore);
         }
 
         $post = Post::find($id);
@@ -177,7 +177,7 @@ class PostsController extends Controller
 
         if ( $post->cover_image != "noimage.jpg" ) {
             // Delete Image from Storage
-            Storage::delete('public/cover_images/'.$post->cover_image);
+            Storage::delete('public/coverimages/'.$post->cover_image);
         }
 
         $post->delete();
